@@ -1,4 +1,5 @@
-const fs = require("fs");
+// const fs = require("fs");
+import fs from 'fs';
 
 // Lectura de forma Sincronica
 // const data = fs.readFileSync('archivo.txt', 'utf-8');
