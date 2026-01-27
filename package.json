@@ -1,0 +1,32 @@
+{
+  "name": "backend_76800",
+  "version": "1.0.0",
+  "description": "Primer servidor con Express del curso de la comision #76800",
+  "keywords": [
+    "servidor",
+    "coderhouse"
+  ],
+  "homepage": "https://github.com/Drako01/be_76800#readme",
+  "bugs": {
+    "url": "https://github.com/Drako01/be_76800/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Drako01/be_76800.git"
+  },
+  "license": "MIT",
+  "author": "Alejandro Di Stefano",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
