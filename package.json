@@ -17,14 +17,17 @@
   "license": "MIT",
   "author": "Alejandro Di Stefano",
   "type": "commonjs",
-  "main": "server.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "dev": "nodemon server.js"
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
   "dependencies": {
-    "express": "^5.2.1"
+    "express": "^5.2.1",
+    "bootstrap": "5.3.8",
+    "express-handlebars": "8.0.4",
+    "multer": "2.0.2"
   },
   "devDependencies": {
     "nodemon": "^3.1.10"
