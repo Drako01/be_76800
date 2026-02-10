@@ -1,0 +1,37 @@
+{
+  "name": "backend_76800",
+  "version": "2.0.0",
+  "description": "Aplicacion con un servidor web socket para el curso de la comision #76800",
+  "keywords": [
+    "servidor",
+    "coderhouse"
+  ],
+  "homepage": "https://github.com/Drako01/be_76800#readme",
+  "bugs": {
+    "url": "https://github.com/Drako01/be_76800/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Drako01/be_76800.git"
+  },
+  "license": "MIT",
+  "author": "Alejandro Di Stefano",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "bootstrap": "5.3.8",
+    "express-handlebars": "8.0.4",
+    "multer": "2.0.2",
+    "socket.io": "^4.8.3",
+    "sweetalert2": "11.26.18"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
