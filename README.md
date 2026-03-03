@@ -148,6 +148,7 @@ Base URL local: `http://localhost:3000`
 - `POST /user`
   - Crea usuario.
   - Body requerido:
+
     ```json
     {
       "name": "Ada",
@@ -155,6 +156,7 @@ Base URL local: `http://localhost:3000`
       "age": 30
     }
     ```
+
   - Respuestas:
     - `201` usuario creado
     - `400` si faltan campos
@@ -191,12 +193,14 @@ Base URL local: `http://localhost:3000`
 - `POST /curso`
   - Crea curso.
   - Body ejemplo:
+
     ```json
     {
       "title": "Backend Avanzado",
       "description": "Node, Express y MongoDB"
     }
     ```
+
   - Respuestas:
     - `201` curso creado
     - `500` error de validación/servidor
