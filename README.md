@@ -59,14 +59,14 @@ No hay capa de controllers/services separada: la lógica de negocio vive en cada
 
 ```mermaid
 flowchart TD
-    A[Inicia app.js] --> B[express()]
-    B --> C[app.use express.json]
-    C --> D[Monta routers / /user /curso]
-    D --> E[startServer()]
-    E --> F[connectMongoDB('atlas')]
-    F --> G{Conexion OK?}
-    G -- Si --> H[app.listen puerto 3000]
-    G -- No --> I[Log error y process.exit(1)]
+    A["Inicia app.js"] --> B["Crea instancia Express"]
+    B --> C["Registra middleware JSON"]
+    C --> D["Monta rutas: / , /user , /curso"]
+    D --> E["Ejecuta startServer"]
+    E --> F["Conecta MongoDB en modo atlas"]
+    F --> G{"Conexion OK"}
+    G -->|Si| H["Inicia listen en puerto 3000"]
+    G -->|No| I["Log de error y fin del proceso"]
 ```
 
 ## Flujo completo de una request
@@ -240,24 +240,24 @@ Cualquier ruta no definida responde:
 
 ```mermaid
 flowchart TD
-    A[POST /curso/:courseId/inscription/:studentId] --> B[Buscar curso por ID]
-    B --> C[Buscar alumno por ID]
-    C --> D{Curso y alumno existen?}
-    D -- No --> E[404]
-    D -- Si --> F{Alumno ya esta en students?}
-    F -- Si --> G[400]
-    F -- No --> H[Push studentId y save]
-    H --> I[201]
+    A["POST inscription"] --> B["Buscar curso por ID"]
+    B --> C["Buscar alumno por ID"]
+    C --> D{"Curso y alumno existen"}
+    D -->|No| E["404"]
+    D -->|Si| F{"Alumno ya inscripto"}
+    F -->|Si| G["400"]
+    F -->|No| H["Agregar studentId y guardar"]
+    H --> I["201"]
 ```
 
 ```mermaid
 flowchart TD
-    J[POST /curso/:courseId/desinscription/:studentId] --> K[Buscar curso]
-    K --> L{Existe curso?}
-    L -- No --> M[404]
-    L -- Si --> N[Filtrar students removiendo studentId]
-    N --> O[Guardar curso]
-    O --> P[200]
+    J["POST desinscription"] --> K["Buscar curso"]
+    K --> L{"Existe curso"}
+    L -->|No| M["404"]
+    L -->|Si| N["Filtrar students removiendo studentId"]
+    N --> O["Guardar curso"]
+    O --> P["200"]
 ```
 
 ## Configuración y ejecución
