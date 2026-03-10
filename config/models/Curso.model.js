@@ -1,4 +1,4 @@
-import mongoose, { Schema } from "mongoose";
+import mongoose from "mongoose";
 
 const cursoSchema = new mongoose.Schema({
     title: {
@@ -9,7 +9,7 @@ const cursoSchema = new mongoose.Schema({
     description: {
         type: String
     },
-    students: [{ type: mongoose.Schema.Types.ObjectId, ref: 'user'}]
+    students: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }]
 });
 
 
